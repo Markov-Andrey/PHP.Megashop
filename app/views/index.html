@@ -16,6 +16,8 @@
         {%for k,v in value %}
           {%if k == 'id' %}
           <td data-id="{{v}}">{{ v }}</td>
+          {%elseif k == 'price' %}
+          <td>{{ v | number_format(2, '.', ' ') }}</td>
           {%else %}
           <td>{{ v }}</td>
           {% endif %}
@@ -52,7 +54,7 @@
                 <label for="name">Название</label>
                 <input type="text" id="name">  
                 <label for="name">Цена</label>
-                <input type="number" id="price">
+                <input type="number" id="price" step="0.01" min="0">
     
             
             </div>
