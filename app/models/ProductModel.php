@@ -41,4 +41,11 @@ class ProductModel extends Model
             ->get();
         }
     }
+
+    public function updProduct($data, $id)
+    {
+        $this->queryBuilder->update($this->table, $data)
+                           ->where(["id", "=", $id])
+                           ->get();
+    }
 }

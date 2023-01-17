@@ -12,11 +12,11 @@ class UpdController extends Controller
     }
 
     public function index()
-    {   
-      echo "Hello";
-      /*
-        $data['id'] = (integer)$_POST['id'];
-        $this->productModel->delProduct($data);*/
+    {
+        $id = (integer)$_POST['id'];
+        $data['name'] = $_POST['name'];
+        $data['price'] = (float)$_POST['price'];
+        $this->productModel->updProduct($data, $id);
     }
 
 }

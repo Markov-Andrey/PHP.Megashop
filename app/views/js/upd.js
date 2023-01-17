@@ -1,27 +1,35 @@
+let id //общая переменная для обеих функций
+let obj
+
+//функция автозаполнения полей из данных таблицы которые нужно изменять
 $( ".update" ).on('click', function(e) {
   e.preventDefault();
 
-  //функция автозаполнения полей которые нужно изменять
+  id = $(this).attr('id');
+  obj = $(this).parent().parent()
+
   set = (a) => {
-    let obj = $(this).parent().parent()
     let result = $(obj).children("." + a).text()
     $("#" + a + "Upd").val(result)
   }
+
   set("name")
   set("price")
 });
 
-/*
+
+//данные для отправки в контроллер
 $( "#form2" ).submit(function( e ) {
   e.preventDefault();
-  let id = $(this)
-  console.log(id)
-  /*
-  jsonData = {name: name, price: price}
+
+  let name = ( $("#nameUpd").val() )
+  let price = ( $("#priceUpd").val() )
+
+  jsonData = {name: name, price: price, id: id}
   $.post( "upd", jsonData )
       .done(function() {
-          
+          $(obj).children(".name").text(name)
+          $(obj).children(".price").text(price)
       }
   );
 });
-*/

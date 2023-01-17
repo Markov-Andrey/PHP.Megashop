@@ -143,7 +143,7 @@ class MySQLiWrapper extends \Core\AbstractCore
             }
         }
         //die($this->query);
-        return self::$wrapper;
+        return self::$instance;
     }
     
     public function delete($table)
