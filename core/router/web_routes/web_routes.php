@@ -38,15 +38,6 @@ class web_routes
             'middleware' => 'anyone',
             'view'       => '404.html',
         ),
-        "test" => array (
-            'route'      => '/',
-            'file'       => 'app/controllers/TestController.php',
-            'class'      => 'App\Controllers\TestController',
-            'function'   => 'index',
-            'method'     => 'get',
-            'middleware' => 'anyone',
-            'view'       => '404.html',
-        ),
         "add" => array (
             'route'      => '/add',
             'file'       => 'app/controllers/AddController.php',
